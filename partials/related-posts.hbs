@@ -6,9 +6,7 @@
                 <ul>
                     {{#foreach related_posts}}
                     <li>
-                        <h5 class="is-5"><a href="{{url}}">{{title}}</a></h5>
-                        <p class="mt-1">{{excerpt words="8"}}</p>
-                        <hr class="spacer">
+                        {{>"post-element"}}
                     </li>
                     {{/foreach}}
                 </ul>

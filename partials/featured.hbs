@@ -1,12 +1,10 @@
-<aside>
+<aside class="mb-2">
     {{#get "posts" filter="featured:true" limit="3" as |feat_post|}}
         <h4 class="title is-5 has-background-link-light">In evidenza:</h4>
         <ul>
             {{#foreach feat_post}}
             <li>
-                <h5 class="is-6"><a href="{{url}}">{{title}}</a></h5>
-                <p class="mt-1">{{excerpt words="15"}}</p>
-                <hr class="spacer">
+               {{>"post-element"}}
             </li>
             {{/foreach}}
         </ul>
