@@ -1,0 +1,30 @@
+
+<div class="columns is-gapless mt-3 mb-4">
+  <div class="column">
+    <div class="content">
+        <h6 class="subtitle is-6">
+            <time datetime="{{date format='YYYY-MM-DD'}}">
+                {{date format="DD/MM/YYYY"}}
+            </time>
+            <small class="is-pulled-right tags">
+              {{#if tags}}
+                {{#foreach tags}}
+                  <span class="tag is-warning is-light">
+                    <a href="{{url}}" title="{{name}}">{{name}}</a>
+                  </span>
+                {{/foreach}}
+              {{/if}}
+            </small>
+        </h6>      
+        <h2 class="title is-3 is-spaced">
+          {{#if featured}}
+            <span class="has-text-primary">&#128947;</span>
+          {{/if}}
+          <a href="{{url}}">{{title}}</a>
+        </h2>
+        <p>{{excerpt words="60"}}&hellip;</p>
+        <p><a href="{{url}}" class="button is-rounded has-background-info-light">Continua </a></p>        
+    </div>
+  </div>
+</div>
+<hr>

@@ -1,0 +1,26 @@
+<hr />
+{{!-- Links to Previous/Next posts --}}
+<div class="columns is-vcentered">
+    <div class="column is-half">
+        {{#next_post}}
+            <div class="card">
+                <div class="card-content has-text-left has-background-info-light">
+                    <p class="subtitle is-5">
+                        <a href="{{url}}">&laquo; {{title}}</a>
+                    </p>
+                </div>
+            </div>
+        {{/next_post}}        
+    </div>
+    <div class="column is-half">
+        {{#prev_post}}
+            <div class="card">
+                <div class="card-content has-text-right has-background-info-light">
+                    <p class="subtitle is-5">
+                        <a href="{{url}}">{{title}} &raquo;</a>
+                    </p>
+                </div>
+            </div>
+        {{/prev_post}}
+    </div>
+</div>

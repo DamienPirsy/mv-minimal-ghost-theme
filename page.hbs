@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{>content-header}}
+<section class="section">
+  <div class="container">
+
+      <div class="columns">
+          <div class="column is-8 is-offset-1 {{post_class}}">
+            <a href="{{@site.url}}" class="button has-background-warning-light has-text-left">
+              <span class="back-arrow">← </span>{{@site.title}}
+            </a>
+            <hr >
+                      
+            {{#post}}            
+            <h1 class="title is-2 is-spaced">
+              <a href="{{url}}">{{title}}</a>
+            </h1>
+            <div class="content">
+                {{content}}
+            </div>
+            {{/post}}    
+          </div>
+          <div class="column is-3" id="sidebar">
+            {{> "social" }}
+            {{> "recent"}}
+            {{> "sidebar-full-tags"}}
+          </div>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+{{#if primary_tag}}
+    <aside class="mb-2">
+        {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+            {{#if related_posts}}
+                <h4 class="title is-5 has-background-link-light">Vedi anche:</h4>
+                <ul>
+                    {{#foreach related_posts}}
+                    <li>
+                        <h5 class="is-5"><a href="{{url}}">{{title}}</a></h5>
+                        <p class="mt-1">{{excerpt words="8"}}</p>
+                        <hr class="spacer">
+                    </li>
+                    {{/foreach}}
+                </ul>
+            {{/if}}
+        {{/get}}
+    </aside>
+{{/if}}

@@ -1,0 +1,29 @@
+<nav class="navbar is-fixed-top">
+  <div class="container">
+    <div class="navbar-brand">
+      {{#if @site.logo}}
+          <a class="navbar-item" href="{{@site.url}}">
+            <img src="{{@site.logo}}"/>
+          </a>
+      {{/if}}
+      <div class="navbar-burger burger" data-target="mynavbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="mynavbar" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item">
+          <h1>{{@site.title}} - 
+            {{@site.description}}
+          </h1>
+        </div>
+      </div>
+      <div class="navbar-end">
+        {{navigation}}
+      </div>
+    </div>
+  </div>
+</nav>

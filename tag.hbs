@@ -1,0 +1,42 @@
+{{!< default}}
+
+{{> content-header}}
+
+
+<section class="section">
+  <div class="container">
+      <div class="columns">
+          <div class="column is-8 is-offset-1">
+
+            <a href="{{@site.url}}" class="button has-background-warning-light has-text-left">
+              <span class="back-arrow">← </span>{{@site.title}}
+            </a>
+            <hr>
+          
+            {{!-- <p class="tag-info__description">
+              {{tag.description}} Subscribe to this  tag’s <a href="{{@site.url}}/tag/{{tag.slug}}/rss/">RSS feed</a> to get new {{tag.name}} posts as they’re written.
+            </p> --}}
+
+            <div class="columns">
+              <div class="column has-background-success-light px-6 py-6">
+                  <p class="subtitle is-5">
+                    <strong>{{pagination.total}} post</strong> con etichetta: <strong>{{tag.name}}</strong>
+                  </p>
+              </div>
+            </div>
+            <hr>
+
+            {{> "loop"}}  
+
+          </div>
+          <div class="column is-3" id="sidebar">
+            {{#if tag.feature_image}}
+              <img class="tag-info__image" src="{{tag.feature_image}}" alt="Image for {{tag.name}} tag" />
+            {{/if}}
+            {{> "social"}}
+            {{> "recent" }}
+            {{> "sidebar-full-tags"}}
+          </div>
+      </div>
+  </div>
+</section>

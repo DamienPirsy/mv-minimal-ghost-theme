@@ -1,0 +1,10 @@
+<nav class="pagination is-rounded is-large" role="navigation" aria-label="pagination">
+  {{#if prev}}
+     <a href="{{page_url prev}}" class="pagination-previous">&laquo; Più recenti</a>
+  {{/if}}
+  {{#if next}}
+  <a href="{{page_url next}}" class="pagination-next">Più vecchi &raquo;</a>
+  {{/if}}
+
+  Pagina {{page}} di {{pages}}
+</nav>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}" class="has-navbar-fixed-top">
+<head>
+  {{! Document Settings }}
+  <meta charset="utf-8" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{! Makes IE support useful HTML5/CSS3 features }}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  {{! Page Meta }}
+  <title>{{meta_title}}{{#is "post, page"}} — {{@site.title}}{{/is}}</title>
+
+  {{! Styles }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
+
+  {{! Ghost outputs important stuff with this tag }}
+  {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+
+  {{! Everything else gets inserted here }}
+  {{{body}}}
+
+  {{! common footer }}
+  {{>"footer"}}
+  
+  {{! Ghost outputs important scripts with this, including the the content for the code injection pane }}
+  {{ghost_foot}}
+
+</body>
+</html>

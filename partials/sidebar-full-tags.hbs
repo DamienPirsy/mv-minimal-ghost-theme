@@ -1,0 +1,14 @@
+{{#get "tags" include="count.posts" order="count.posts desc" limit="all"}}
+  <aside>
+    <h4 class="title is-5 has-background-link-light">Etichette:</h4>
+    <div class="tags">
+        {{#foreach tags}}
+        {{#if count.posts}}
+            <span class="tag is-warning is-light">
+                <a href="{{url}}">{{name}} ({{count.posts}})</a>
+            </span>
+        {{/if}}
+        {{/foreach}}
+    </div>
+  </aside>
+{{/get}}

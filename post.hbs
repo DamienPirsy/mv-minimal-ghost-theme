@@ -1,0 +1,66 @@
+{{!< default}}
+
+{{>content-header}}
+
+<section class="section">
+  <div class="container">
+
+      <div class="columns">
+          <div class="column is-8 is-offset-1 {{post_class}}">
+
+          
+            <a href="{{@site.url}}" class="button has-background-warning-light has-text-left">
+              <span class="back-arrow">← </span>{{@site.title}}
+            </a>
+            <hr >
+          
+
+
+            {{#post}}            
+            <h1 class="title is-2 is-spaced">
+              {{#if featured}}
+                <span class="has-text-primary">&#128947;</span>
+              {{/if}}
+              <a href="{{url}}">{{title}}</a>
+            </h1>
+
+            <h6 class="subtitle is-6">
+                <time datetime="{{date format='YYYY-MM-DD'}}">
+                    {{date format="DD/MM/YYYY"}}
+                </time>
+                <small class="has-text-grey ml-3">({{reading_time}})</small>
+                <small class="is-pulled-right tags">
+                  {{#if tags}}
+                    {{#foreach tags}}
+                      <span class="tag is-info is-light">
+                        <a href="{{url}}" title="{{name}}">{{name}}</a>
+                      </span>
+                    {{/foreach}}
+                  {{/if}}
+                </small>
+            </h6>
+            <div class="content">
+                {{content}}
+                {{>"share"}}
+            </div>
+
+            <hr>
+            <div class="content">
+              {{> author-info}}
+            </div>
+
+            {{> comments }}
+            {{> "previous-next" }}
+
+            {{/post}}    
+          </div>
+          <div class="column is-3" id="sidebar">
+            {{> "social"}}
+            {{#post}}
+              {{> "related-posts"}}
+            {{/post}}
+            {{> "sidebar-full-tags"}}
+          </div>
+      </div>
+  </div>
+</section>

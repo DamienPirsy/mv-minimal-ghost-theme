@@ -1,0 +1,19 @@
+{{!< default}} 
+
+{{>"main-header"}}
+  
+<section class="section">
+  <div class="container">
+      <div class="columns">
+          <div class="column is-8 is-offset-1">
+              {{> "loop"}}              
+          </div>
+          <div class="column is-3" id="sidebar">
+            {{> "social" }}
+            {{> "featured" }}
+            {{> "author-widget" }}
+            {{> "sidebar-full-tags"}}
+          </div>
+      </div>
+  </div>
+</section>
