@@ -1,29 +1,31 @@
-<nav class="navbar is-fixed-top">
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="container">
-    <div class="navbar-brand">
+  <div class="navbar-brand">
       {{#if @site.logo}}
           <a class="navbar-item" href="{{@site.url}}">
             <img src="{{@site.logo}}"/>
           </a>
       {{/if}}
-      <div class="navbar-burger burger" data-target="mynavbar">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="navbar-item">
+        <h1>{{@site.title}}</h1>
+      </div>      
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+        <div class="navbar-item">
+            {{@site.description}}          
+        </div>
     </div>
 
-    <div id="mynavbar" class="navbar-menu">
-      <div class="navbar-start">
-        <div class="navbar-item">
-          <h1>{{@site.title}} - 
-            {{@site.description}}
-          </h1>
-        </div>
-      </div>
-      <div class="navbar-end">
+    <div class="navbar-end">
         {{navigation}}
-      </div>
     </div>
+  </div>
   </div>
 </nav>
